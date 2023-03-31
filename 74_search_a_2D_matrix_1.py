@@ -1,5 +1,8 @@
 class Solution:
     def searchMatrix(self, matrix: List[List[int]], target: int) -> bool:
+         # Two Binary searches approach O(logm + logn)
+
+        # Binary searches #1 - Find Row
         ROWS, COLS = len(matrix), len(matrix[0])
 
         # top and bottom pointers
@@ -20,7 +23,8 @@ class Solution:
         # find current row by top and bot values from previous binary search on matrix rows
         row = (top + bot) // 2
 
-        # now we do binary search on found row
+
+        # Binary searches #1 - Find target from row that was found in Binary Search #1
         # left and right pointers
         l, r = 0, COLS 
         while l <= r:
